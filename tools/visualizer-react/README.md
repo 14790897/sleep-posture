@@ -4,6 +4,10 @@ Next.js 16 + React 19 + Tailwind CSS + three.js（Turbopack）。**页面通过 
 
 在线：<https://sleep-posture-3d.vercel.app>
 
+## 部署
+
+Vercel 已连接 GitHub 仓库 `14790897/sleep-posture`：push 到 `main` 会自动生产部署，Pull Request 会自动创建 Preview。Vercel 项目的 Root Directory 已设为 `tools/visualizer-react`。
+
 ## 运行
 
 ```powershell
@@ -19,7 +23,7 @@ npm run dev
 - **没有蓝牙适配器**：页面会显示「未检测到可用的蓝牙适配器」。先插回 USB 蓝牙适配器，或在 Windows 设置中打开蓝牙；用系统 Chrome/Edge，内置预览窗没有完整的蓝牙选择器。
 - 数据帧 24 字节，需要 ATT MTU ≥ 27。连上但一直没帧时，看「设置 → 诊断」里的 BLE 位（MTU/订阅/句柄/发送）；先删配对再重连。
 - 连接后页面会向控制特征写入 Start stream **25 Hz**（`0x01 0x19`，固件 `notify_div=2`）。
-- 旧的 `../visualizer` 页面和 `bridge_server.py` 仍保留作 fallback，但这个 React 版不使用它们。
+- 本项目使用 Web Bluetooth 直连，不依赖 Python 桥接。
 
 ## 热更新
 
