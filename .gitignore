@@ -1,0 +1,24 @@
+firmware/build/
+firmware/managed_components/
+firmware/vendor/
+firmware/sdkconfig
+firmware/sdkconfig.old
+firmware/managed_components/
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+__pycache__/
+*.pyc
+
+# local tooling / build caches
+.claude/
+.vercel/
+node_modules/
+.next/
+out/
+.tmp_img/
+
+# EasyEDA temp files and local shortcuts
+.tmp/
+*.lnk
